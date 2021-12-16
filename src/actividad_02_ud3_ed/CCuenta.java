@@ -22,7 +22,9 @@ public class CCuenta {
     private double saldo;
     private double tipoInterés;
 
-  
+    /**
+     * es el constructor sin parametros
+     */
     public CCuenta ()
     {
     }
@@ -67,7 +69,11 @@ public class CCuenta {
         return saldo;
     }
 
-    
+    /**
+     * 
+     * @param cantidad cantidad a ingresar
+     * @throws Exception control de excepcion
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0){
@@ -75,7 +81,11 @@ public class CCuenta {
         setSaldo(saldo + cantidad);
     }
 
-   
+   /**
+    * 
+    * @param cantidad cantidad a retirar
+    * @throws Exception control de excepcion
+    */
     public void retirar (double cantidad) throws Exception
     {
         if (cantidad < 0){
@@ -84,28 +94,42 @@ public class CCuenta {
             throw new Exception ("No se hay suficiente saldo");}
         setSaldo(saldo - cantidad);
     }
-    
+    /**
+     * 
+     * @return devuelve el numero de cuenta
+     */
     public String obtenerCuenta ()
     {
         return cuenta;
     }
 
-  
+  /**
+   * 
+   * @param cuenta añade el valor que le pasamos a la instancia cuenta
+   */
   public void setCuenta(String cuenta) {
     this.cuenta = cuenta;
   }
-
+/**
+ * 
+ * @param saldo añade el valor que le pasamos a la instancia slado
+ */
   
   public void setSaldo(double saldo) {
     this.saldo = saldo;
   }
 
- 
+  /*
+  * @return devuelve el tipo de interes
+  */
   public double getTipoInterés() {
     return tipoInterés;
   }
 
-  
+  /**
+ * 
+ * @param tipoInterés añade el valor que le pasamos a la instancia tipoInterés
+ */
   public void setTipoInterés(double tipoInterés) {
     this.tipoInterés = tipoInterés;
   }
